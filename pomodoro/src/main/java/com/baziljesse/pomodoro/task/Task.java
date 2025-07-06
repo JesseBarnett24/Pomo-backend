@@ -15,42 +15,41 @@ public class Task {
             strategy = GenerationType.SEQUENCE,
             generator = "task_sequence"
     )
-    private Long id;
+    private Long taskID;
     private String name;
     private String description;
     private String type;
     private Boolean status;
     private Integer total_time;
+    @Transient
     private Integer app_time;
 
     public Task() {
     }
 
-    public Task(Long id, String name, String description, String type, Boolean status, Integer total_time, Integer app_time) {
-        this.id = id;
+    public Task(Long taskID, String name, String description, String type, Boolean status, Integer total_time) {
+        this.taskID = taskID;
         this.name = name;
         this.description = description;
         this.type = type;
         this.status = status;
         this.total_time = total_time;
-        this.app_time = app_time;
     }
 
-    public Task(String name, String description, String type, Boolean status, Integer total_time, Integer app_time) {
+    public Task(String name, String description, String type, Boolean status, Integer total_time) {
         this.name = name;
         this.description = description;
         this.type = type;
         this.status = status;
         this.total_time = total_time;
-        this.app_time = app_time;
     }
 
-    public Long getId() {
-        return id;
+    public Long getTaskID() {
+        return taskID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setTaskID(Long id) {
+        this.taskID = id;
     }
 
     public String getName() {
@@ -94,17 +93,18 @@ public class Task {
     }
 
     public Integer getApp_time() {
-        return app_time;
+//        return Period.between(dob, LocalDate.now()).getYears();
+        return total_time-1;
     }
 
-    public void setApp_time(Integer current_time) {
-        this.app_time = current_time;
+    public void setApp_time(Integer app_time) {
+        this.app_time = app_time;
     }
 
     @Override
     public String toString() {
         return "Task{" +
-                "id=" + id +
+                "id=" + taskID +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", type='" + type + '\'' +
