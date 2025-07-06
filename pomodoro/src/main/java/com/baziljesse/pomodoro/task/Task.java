@@ -21,28 +21,28 @@ public class Task {
     private String type;
     private Boolean status;
     private Integer total_time;
-    private Integer current_time;
+    private Integer app_time;
 
     public Task() {
     }
 
-    public Task(Long id, String name, String description, String type, Boolean status, Integer total_time, Integer current_time) {
+    public Task(Long id, String name, String description, String type, Boolean status, Integer total_time, Integer app_time) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.type = type;
         this.status = status;
         this.total_time = total_time;
-        this.current_time = current_time;
+        this.app_time = app_time;
     }
 
-    public Task(String name, String description, String type, Boolean status, Integer total_time, Integer current_time) {
+    public Task(String name, String description, String type, Boolean status, Integer total_time, Integer app_time) {
         this.name = name;
         this.description = description;
         this.type = type;
         this.status = status;
         this.total_time = total_time;
-        this.current_time = current_time;
+        this.app_time = app_time;
     }
 
     public Long getId() {
@@ -93,12 +93,12 @@ public class Task {
         this.total_time = total_time;
     }
 
-    public Integer getCurrent_time() {
-        return current_time;
+    public Integer getApp_time() {
+        return app_time;
     }
 
-    public void setCurrent_time(Integer current_time) {
-        this.current_time = current_time;
+    public void setApp_time(Integer current_time) {
+        this.app_time = current_time;
     }
 
     @Override
@@ -110,7 +110,7 @@ public class Task {
                 ", type='" + type + '\'' +
                 ", status=" + status +
                 ", total_time=" + total_time +
-                ", current_time=" + current_time +
+                ", current_time=" + app_time +
                 '}';
     }
 }
